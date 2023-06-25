@@ -1,0 +1,13 @@
+@import './colors.scss';
+
+:root {
+   --background: #{$background};
+   --backgroundSecondary: #{$backgroundSecondary};
+   --caption: #{$caption};
+   --text: #{$text};
+   --action: #{$action};
+   --blueAccent: #{$blueAccent};
+   --redAccent: #{$redAccent};
+   --gradient1: #{$gradient1};
+   --gradient2: #{$gradient2};
+}
