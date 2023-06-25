@@ -1,17 +1,17 @@
 import { ComponentStory} from '@storybook/react';
-import {Button} from "./index";
-import {ButtonProps} from "./Button";
+import {ButtonProps, Button} from "./Button";
 
 export default {
     title: 'shared/lib/Button',
     component: Button
 }
 
-const Template: ComponentStory<typeof Button> = (args: ButtonProps) => Button(args)
+const Template: ComponentStory<typeof Button> = (args: ButtonProps) => <Button {...args}>Button</Button>
 
 export const Default = Template.bind({})
 
 Default.args = {
     iconLeft: 'placeholder',
-    children: 'Text'
+    children: 'Text',
+    tag: 'a'
 }
