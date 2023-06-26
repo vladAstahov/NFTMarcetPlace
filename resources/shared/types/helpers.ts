@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
 
 export type DisabledPropsType = boolean | ''
 export type TagPropsType = 'div' | 'a' | 'button' | 'label' | 'strong'
