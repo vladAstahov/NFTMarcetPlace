@@ -1,5 +1,51 @@
 .button {
-    button {
-        background: red;
+    $b: &;
+
+    @include fontSize(h5, (weight: 600));
+
+    display: flex;
+    align-items: center;
+    padding: 0 toRem(50);
+    box-sizing: border-box;
+    color: var(--text);
+    width: fit-content;
+    border-radius: toRem(20);
+    border: 1px solid var(--action);
+
+    &--size {
+        &-primary {
+            height: toRem(72);
+        }
+
+        &-secondary {
+            height: toRem(60)
+        }
+
+        &-tertiary {
+            height: toRem(46);
+        }
+    }
+
+    &--view {
+        &-filled {
+            background-color: var(--action);
+
+            #{$b}__icon {
+                color: var(--text);
+            }
+        }
+
+        &-outline {
+            background-color: transparent;
+
+            #{$b}__icon {
+                color: var(--action);
+            }
+        }
+    }
+
+    &__icon {
+        font-size: toRem(20);
+        margin-right: toRem(12);
     }
 }

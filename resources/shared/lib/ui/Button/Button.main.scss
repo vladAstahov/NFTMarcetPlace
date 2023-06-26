@@ -1,0 +1,31 @@
+.button {
+    transition: 0.3s ease;
+    transition-property: background-color;
+
+    &__icon {
+        transition: 0.3s ease;
+        transition-property: color;
+    }
+
+    &--view {
+        &-filled {
+            &:hover {
+                background-color: transparent;
+
+                .button__icon {
+                    color: var(--action);
+                }
+            }
+        }
+
+        &-outline {
+            &:hover {
+                background-color: var(--action);
+
+                .button__icon {
+                    color: var(--text);
+                }
+            }
+        }
+    }
+}
