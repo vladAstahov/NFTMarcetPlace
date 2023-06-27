@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo } from "react";
-import {DefaultProps, IconName } from "../../../types/helpers";
+import {DefaultProps, IconName } from "../../types/helpers";
 import { IconBase } from '../IconBase'
 
 export type ButtonProps = {

@@ -1,0 +1,16 @@
+.avatar {
+    position: relative;
+    width: toRem(60);
+    height: toRem(60);
+    border-radius: 50%;
+
+    &__image {
+        @include center();
+        width: 100%;
+    }
+
+    @include media-desktop {
+        width: toRem(120);
+        height: toRem(120);
+    }
+}
