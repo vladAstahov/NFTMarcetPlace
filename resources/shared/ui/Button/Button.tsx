@@ -1,11 +1,11 @@
 import React, { ReactNode, useMemo } from "react";
-import {DefaultProps, IconName } from "../../types/helpers";
+import { DefaultProps, IconName } from "../../types/helpers";
 import { IconBase } from '../IconBase'
 
 export type ButtonProps = {
     view?: 'filled' | 'outline'
     size?: 'primary' | 'secondary' | 'tertiary'
-    tag: 'a' | 'button'
+    tag?: 'a' | 'button'
     href?: string
     icon?: IconName
     ariaLabel: string
@@ -19,15 +19,16 @@ export type ButtonHandlers = {
  * @component Button
  * @description Компонент кнопки
  */
-export const Button = React.memo<ButtonProps & React.PropsWithChildren>(({ size = 'primary', view = 'filled', href, icon, ariaLabel, tag, children, onClick }) => {
+export const Button = React.memo<ButtonProps & React.PropsWithChildren>(({ size = 'primary', view = 'filled', href, icon, ariaLabel, tag = 'button', children, onClick, className }) => {
     const classes = useMemo(() => {
         return [
             `button`,
             `button--view-${view}`,
-            `button--size-${size}`
-        ].join(' ')
+            `button--size-${size}`,
+            `${className || ''}`
+        ].join(' ').trim()
     }, [view, size])
-    
+
     const main = useMemo<ReactNode>(() => (
         <>
             {icon && (
@@ -39,19 +40,19 @@ export const Button = React.memo<ButtonProps & React.PropsWithChildren>(({ size 
 
     const buttonWrapper = <>
         {tag === 'a' && (
-            <a 
-                className={classes} 
+            <a
+                className={classes}
                 href={href}>
-                    {main}
+                {main}
             </a>
         )}
         {tag === 'button' && (
             <button
-                className={classes} 
-                aria-label={ariaLabel} 
-                
+                className={classes}
+                aria-label={ariaLabel}
+
                 onClick={onClick}>
-                    {main}
+                {main}
             </button>
         )}
     </>

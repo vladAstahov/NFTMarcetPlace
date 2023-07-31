@@ -1,0 +1,83 @@
+.card-creator {
+    display: flex;
+    position: relative;
+
+    @include media-maxMobileLate {
+        &__back {
+            display: none;
+        }
+
+        &__avatar {
+            width: toRem(60);
+        }
+    }
+
+    &__front,
+    &__back {
+        border-radius: toRem(20);
+        padding: toRem(20);
+        background-color: var(--backgroundSecondary);
+        flex-grow: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        backface-visibility: hidden;
+        transition: transform .6s linear;
+        box-sizing: border-box;
+    }
+
+    &__front {
+        padding: toRem(20);
+        position: relative;
+        display: flex;
+    }
+
+    &__rate {
+        @include fontSize(base);
+
+        position: absolute;
+        z-index: 2;
+        top: toRem(20);
+        left: toRem(20);
+        display: block;
+        width: toRem(30);
+        height: toRem(30);
+        background-color: var(--background);
+        color: var(--caption);
+        border-radius: 50%;
+        line-height: toRem(30);
+        text-align: center;
+    }
+
+    &__username {
+        @include fontSize(h5, (weight: 600));
+        @include marginLevel(bottom, orange);
+
+        color: var(--text);
+        text-align: center;
+    }
+
+    &__sales {
+        @include fontSize(base);
+
+        color: var(--caption);
+    }
+
+    &__amount {
+        @include fontSize(base);
+
+        margin-left: toRem(10);
+        color: var(--text);
+    }
+
+    @include media-desktop {
+        &__front {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__avatar {
+            @include marginLevel(bottom, blue);
+        }
+    }
+}

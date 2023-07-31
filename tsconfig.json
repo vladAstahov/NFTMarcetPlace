@@ -8,6 +8,9 @@
         "noImplicitAny": true,
         "esModuleInterop": true,
         "baseUrl": "./",
+        "paths": {
+            "@/": ["./resources/"]
+        }
     },
     "exclude": [
         "node_modules"
